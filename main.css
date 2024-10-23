@@ -1,0 +1,315 @@
+:root {
+  --fonts-mondwest: "PP Mondwest", apple-system, sans-serif;
+  --fonts-neueBit: "PP NeueBit", apple-system, sans-serif;
+  --colors-primary: #e1e1e1;
+  --colors-background: #010010;
+  --fontSizes-1: 13px;
+  --fontSizes-2: 15px;
+  --fontSizes-3: 17px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "PP NeueBit";
+  color: #e1e1e1;
+}
+
+a {
+  color: var(--colors-primary);
+  text-decoration: none;
+}
+
+p {
+  font-family: "PP Mondwest";
+  font-size: 1.25rem;
+}
+
+main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  z-index: 0;
+}
+
+.content {
+  height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content__img {
+  max-width: 250px;
+  height: 350px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+@media screen and (min-width: 50em) {
+  .content {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  background: var(--colors-background);
+}
+
+.container#dark {}
+
+.gradient {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 200px;
+  background: var(--colors-background);
+  background: linear-gradient(0deg,
+      rgba(40, 40, 40, 0) 0%,
+      var(--colors-background) 100%);
+}
+
+/* nav */
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  text-transform: uppercase;
+  z-index: 1000000 !important;
+}
+
+nav#light a {
+  /* color: var(--colors-background); */
+}
+
+nav .nav-links {
+  display: flex;
+}
+
+nav .nav-logo .nav-link,
+nav .nav-links .nav-link {
+  padding: 1rem;
+}
+
+nav .nav-logo {
+  font-size: 1.5rem;
+}
+
+/* header */
+header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+header #name {
+  font-family: "PP NeueBit";
+  font-size: 1.575rem;
+}
+
+/* footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+footer#relative {
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+footer .footer-col {
+  flex: 1;
+  text-align: center;
+}
+
+footer .footer-col p {
+  font-size: 0.825rem;
+}
+
+footer#light p {
+  /* color: var(--colors-background); */
+}
+
+/* about */
+section.about {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 15%;
+  padding-right: 15%;
+
+}
+
+.profile_image {
+  width: 45%;
+  min-width: 45%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile_image img {
+  width: 60%;
+}
+
+section.about .about-col p {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+section.about .about-col p.about-title {
+  margin-bottom: 1.2rem;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+section.about .about-col p.about-title:first-child {
+  margin-top: 0rem;
+}
+
+@media (max-width: 900px) {
+  section.about {
+    gap: 0;
+    flex-direction: column;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  section.about .about-col p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* studies */
+section.studies {
+  width: 100%;
+  padding-top: 10rem;
+}
+
+section.studies .study {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--colors-primary);
+}
+
+section.studies .study#final-study {
+  border-bottom: 1px solid var(--colors-primary);
+}
+
+section.studies .study>div {
+  padding: 1rem;
+}
+
+section.studies .study .study-category {
+  flex: 1;
+  text-transform: uppercase;
+}
+
+section.studies .study .study-icon {
+  flex: 1;
+}
+
+section.studies .study .study-icon .study-icon-img {
+  width: 100px;
+  height: 100px;
+  background: var(--colors-primary);
+  border-radius: 2rem;
+}
+
+section.studies .study .study-name {
+  flex: 10;
+  font-family: "PP Mondwest";
+  font-size: 5rem;
+}
+
+section.studies .study .study-year {
+  flex: 1;
+}
+
+@media (max-width: 900px) {
+  section.studies .study .study-category {
+    font-size: 0.75rem;
+  }
+
+  section.studies .study .study-year {
+    display: none;
+  }
+
+  section.studies .study .study-icon .study-icon-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 0.5rem;
+  }
+
+  section.studies .study .study-name {
+    font-size: 2rem;
+  }
+}
+
+#project-1 {
+  background: url("./images/home.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+#project-2 {
+  background: url("./images/musicflix.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+#project-3 {
+  background: url("./images/kbo.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+#project-4 {
+  background: url("./images/carddive.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+#project-5 {
+  background: url("./images/pick.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+#project-6 {
+  background: url("./images/qbit.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+#project-7 {
+  background: url("./images/genshin.png") no-repeat 50% 50%;
+  background-size: cover;
+}
